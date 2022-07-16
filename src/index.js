@@ -18,35 +18,14 @@ const feedbackReducer = (state = [], action) => {
     }
 };
 
-const feelingReducer = (state = [], action) => {
+const resultsReducer = (state = [], action) => {
     switch (action.type){
         case 'GET_FEELING':
             return action.payload;
-        default:
-            return state;
-    }
-};
-
-const supportReducer = (state = [], action) => {
-    switch (action.type){
         case 'GET_SUPPORT':
             return action.payload;
-        default:
-            return state;
-    }
-};
-
-const understandingReducer = (state = [], action) => {
-    switch (action.type){
         case 'GET_UNDERSTANDING':
             return action.payload;
-        default:
-            return state;
-    }
-};
-
-const commentsReducer = (state = '', action) => {
-    switch (action.type){
         case 'GET_COMMENTS':
             return action.payload;
         default:
@@ -58,10 +37,7 @@ const commentsReducer = (state = '', action) => {
 const storeInstance = createStore(
 combineReducers({
     feedbackReducer,
-    feelingReducer,
-    supportReducer,
-    understandingReducer,
-    commentsReducer,
+    resultsReducer
 }),
 applyMiddleware(logger),
 );
@@ -70,3 +46,6 @@ ReactDOM.render
 (<Provider store = { storeInstance }>
     <App />
 </Provider>, document.getElementById('root'));
+
+
+// article inspired attempt to combine reducers into one string of switch statements https://sebhastian.com/react-switch/ 
