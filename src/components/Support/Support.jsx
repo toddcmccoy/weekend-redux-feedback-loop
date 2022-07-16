@@ -18,10 +18,10 @@ function Support(){
     return(
         <div className = "container">
         <div className = "question-card">
-            <h1>How are you feeling?</h1>
+            <h1>How supported are you feeling?</h1>
             <h2>Please select a number between 1 and 5.</h2>
-            <h3>1 being 'I feel like a dumpster fire'</h3>
-            <h3>5 being 'If I was any better I'd be twins'</h3>
+            <h3>1 being 'I'm not alone??'</h3>
+            <h3>5 being 'I feel like I am surrounded by hugs and puppies.'</h3>
             <form>
                 <input
                 className= "number-input"

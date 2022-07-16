@@ -18,10 +18,10 @@ function Understanding(){
     return(
         <div className = "container">
         <div className = "question-card">
-            <h1>How are you feeling?</h1>
+            <h1>How would you rate your understanding?</h1>
             <h2>Please select a number between 1 and 5.</h2>
-            <h3>1 being 'I feel like a dumpster fire'</h3>
-            <h3>5 being 'If I was any better I'd be twins'</h3>
+            <h3>1 being 'What am I supposed to understand'</h3>
+            <h3>5 being 'I got this. Could probably teach it.'</h3>
             <form>
                 <input
                 className= "number-input"
