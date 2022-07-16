@@ -16,12 +16,20 @@ function Comments(){
         history.push('/')
     }
     return(
-        <div>
-            <h2>How are you feeling?</h2>
+        <div className = "container">
+        <div className = "question-card">
+            <h1>Do you have any additional comments you would like to add?</h1>
             <form>
-                {/* <input type="number" min="1" max="5" value="1" /> */}
+                <input
+                type="text"
+                className="text-box"
+                value = {comments}
+                onChange={(event) => setComments(event.target.value)}
+                />
             </form>
+            <button onClick={handleSubmit}>NEXT</button>
         </div>
+    </div>
     )
 
 

@@ -18,6 +18,34 @@
 .App-intro {
   font-size: large;
 }
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.question-card {
+  /* Add shadows to create the "card" effect */
+  width: 800px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.number-input{
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  font-size: 22pt;
+  font-style: oblique;
+
+}
+
+.text-box{
+  width: 32em;
+  height: 16em;
+  text-align: left;
+  padding: 12px;
+}
 
 h4 {
   font-style: italic;

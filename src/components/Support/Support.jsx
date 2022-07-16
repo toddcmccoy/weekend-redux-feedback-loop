@@ -13,15 +13,28 @@ function Support(){
             type: 'ADD_SUPPORT',
             payload: Number(support)
         })
-        history.push('/understanding')
+        history.push('/comments')
     }
     return(
-        <div>
-            <h2>How are you feeling?</h2>
+        <div className = "container">
+        <div className = "question-card">
+            <h1>How are you feeling?</h1>
+            <h2>Please select a number between 1 and 5.</h2>
+            <h3>1 being 'I feel like a dumpster fire'</h3>
+            <h3>5 being 'If I was any better I'd be twins'</h3>
             <form>
-                {/* <input type="number" min="1" max="5" value="1" /> */}
+                <input
+                className= "number-input"
+                type="number"
+                min="1"
+                max="5"
+                value = {support}
+                onChange={(event) => setSupport(event.target.value)}
+                />
             </form>
+            <button onClick={handleSubmit}>NEXT</button>
         </div>
+    </div>
     )
 
 

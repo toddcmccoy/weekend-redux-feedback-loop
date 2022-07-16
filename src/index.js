@@ -45,7 +45,7 @@ const understandingReducer = (state = [], action) => {
     }
 };
 
-const commentsReducer = (state = [], action) => {
+const commentsReducer = (state = '', action) => {
     switch (action.type){
         case 'GET_COMMENTS':
             return action.payload;
