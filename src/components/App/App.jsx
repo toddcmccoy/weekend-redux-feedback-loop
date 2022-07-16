@@ -1,5 +1,12 @@
 import react from 'react';
+import { HashRouter as Router, Route } from "react-router-dom";
 import Header from '../Header/Header';
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
+
+
 import './App.css';
 
 function App() {
@@ -11,20 +18,20 @@ return(
 <Router>
 
 <Route path='/' exact>
-					<Feeling />
-				</Route>
-				<Route path='/understanding' exact>
-					<Understanding />
-				</Route>
-				<Route path='/support' exact>
-					<Support />
-				</Route>
-				<Route path='/comments' exact>
-					<Comment />
-				</Route>
-				<Route path='/admin' exact>
-					<Admin />
-				</Route>
+		<Feeling />
+	</Route>
+	<Route path='/understanding' exact>
+		<Understanding />
+	</Route>
+	<Route path='/support' exact>
+		<Support />
+	</Route>
+	<Route path='/comments' exact>
+		<Comments />
+	</Route>
+	{/* <Route path='/admin' exact>
+		<Admin />
+	</Route> */}
 </Router>
 </>
 
