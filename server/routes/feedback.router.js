@@ -17,18 +17,18 @@ router.get('/', (req, res) => {
 })
 
     // Adds new feedback 
-    router.post('/',  (req, res) => {
+router.post('/',  (req, res) => {
 
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-                    VALUES ($1, $2, $3, $4);`;
+    VALUES ($1, $2, $3, $4);`;
     pool.query(queryText, [req.body.feeling, req.body.understanding, req.body.suport, req.body.comments])
-    .then(result => {
-        res.sendStatus(201);
+.then(result => {
+    res.sendStatus(201);
     })
-    .catch(error => {
-        console.log(`Error adding feedback`, error);
-        res.sendStatus(500);
+.catch(error => {
+    console.log(`Error adding feedback`, error);
+    res.sendStatus(500);
     });
-    });
+});
 
 module.exports = router;
