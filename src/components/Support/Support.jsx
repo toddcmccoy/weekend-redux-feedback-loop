@@ -8,6 +8,7 @@ function Support(){
     const history = useHistory();
     const [support, setSupport] = useState(1);
 
+// sending the selected rating to the store and ensuring that the submission is in the range of 1 to 5
     const handleSubmit = () => {
         if (support >= 1) {
             dispatch ({
@@ -37,7 +38,7 @@ function Support(){
                 onChange={(event) => setSupport(event.target.value)}
                 />
             </form><br />
-            <button onClick={handleSubmit}>NEXT</button>
+            <button onClick={handleSubmit}>Next</button>
         </div>
     </div>
     )

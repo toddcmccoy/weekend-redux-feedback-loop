@@ -1,3 +1,4 @@
+// importing appropriate dependencies
 import { useState} from 'react'
 import { useHistory } from "react-router-dom"
 import { useDispatch } from 'react-redux'; 
@@ -6,8 +7,8 @@ function Feeling(){
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const [feeling, setFeeling] = useState(0);
-
+    const [feeling, setFeeling] = useState(1);
+// sending the selected rating to the store and ensuring that the submission is in the range of 1 to 5
     const handleSubmit = () => {
         if (feeling >=1){
         dispatch ({
@@ -36,7 +37,7 @@ function Feeling(){
                 onChange={(event) => setFeeling(event.target.value)}
                 />
             </form><br />
-            <button onClick={handleSubmit}>NEXT</button>
+            <button onClick={handleSubmit}>Next</button>
         </div>
     </div>
     )

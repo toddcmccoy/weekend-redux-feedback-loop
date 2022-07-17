@@ -11,26 +11,29 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 
 import './App.css';
-
+// creating a GET request. not needed for base functions, but helps to be able to check the console to see if the database is working correctly
 function App() {
 	const dispatch = useDispatch();
 	const getFeedback = () => {
 		axios
 			.get('/feedback')
 			.then((response) => {
-				dispatch({ type: 'GET_FEEDBACK', payload: response.data });
+				dispatch({ type: 'GET_FEEDBACK', 
+				payload: response.data });
 			})
-			.catch((err) => alert('Error with get', err));
+			.catch((err) => 
+			alert('Error with get', err));
 	};
 
 	useEffect(() => getFeedback(), []);
 
 return(
 <>
+{/* bringing in the header component */}
 <Header />
 
 <Router>
-
+{/* declaring the route paths for each component */}
 <Route path='/' exact>
 		<Feeling />
 	</Route>

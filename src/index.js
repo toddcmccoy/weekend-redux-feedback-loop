@@ -69,6 +69,3 @@ ReactDOM.render
 (<Provider store = { storeInstance }>
     <App />
 </Provider>, document.getElementById('root'));
-
-
-// article inspired attempt to combine reducers into one string of switch statements https://sebhastian.com/react-switch/ 
