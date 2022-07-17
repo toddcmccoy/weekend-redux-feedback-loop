@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import './index.css';
 import App from './components/App/App';
-import Header from './components/Header/Header';
+
 
 
 
