@@ -6,7 +6,7 @@ function Feeling(){
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const [feeling, setFeeling] = useState(1);
+    const [feeling, setFeeling] = useState(0);
 
     const handleSubmit = () => {
         dispatch ({

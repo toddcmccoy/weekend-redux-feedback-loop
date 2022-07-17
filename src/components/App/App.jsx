@@ -1,15 +1,31 @@
-import react from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import { HashRouter as Router, Route } from "react-router-dom";
+import {useSelector} from 'react-redux'
+import axios from 'axios';
 import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
+
 
 
 import './App.css';
 
 function App() {
+	const dispatch = useDispatch();
+	const getFeedback = () => {
+		axios
+			.get('/feedback')
+			.then((response) => {
+				dispatch({ type: 'GET_FEEDBACK', payload: response.data });
+			})
+			.catch((err) => alert('Error with get', err));
+	};
+
+	useEffect(() => getFeedback(), []);
 
 return(
 <>
@@ -29,9 +45,9 @@ return(
 	<Route path='/comments' exact>
 		<Comments />
 	</Route>
-	{/* <Route path='/admin' exact>
-		<Admin />
-	</Route> */}
+	<Route path='/review' exact>
+		<Review />
+	</Route>
 </Router>
 </>
 

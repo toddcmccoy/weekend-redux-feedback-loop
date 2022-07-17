@@ -11,9 +11,9 @@ function Comments(){
     const handleSubmit = () => {
         dispatch ({
             type: 'ADD_COMMENTS',
-            payload: ''
+            payload: comments
         })
-        history.push('/')
+        history.push('/review')
     }
     return(
         <div className = "container">

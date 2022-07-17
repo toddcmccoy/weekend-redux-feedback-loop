@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';  
@@ -13,31 +13,54 @@ const feedbackReducer = (state = [], action) => {
     switch (action.type){
         case 'GET_FEEDBACK':
             return action.payload;
-        default:
+        }
             return state;
-    }
 };
 
-const resultsReducer = (state = [], action) => {
-    switch (action.type){
-        case 'GET_FEELING':
-            return action.payload;
-        case 'GET_SUPPORT':
-            return action.payload;
-        case 'GET_UNDERSTANDING':
-            return action.payload;
-        case 'GET_COMMENTS':
-            return action.payload;
-        default:
-            return state;
-    }
+const feelingReducer = (state = 0, action) => {
+	switch (action.type) {
+		case 'ADD_FEELING':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const understandingReducer = (state = 0, action) => {
+	switch (action.type) {
+		case 'ADD_UNDERSTANDING':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const supportReducer = (state = 0, action) => {
+	switch (action.type) {
+		case 'ADD_SUPPORT':
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const commentsReducer = (state = '', action) => {
+	switch (action.type) {
+		case 'ADD_COMMENTS':
+			return action.payload;
+		default:
+			return state;
+	}
 };
 
 // Creating the store
 const storeInstance = createStore(
 combineReducers({
     feedbackReducer,
-    resultsReducer
+    commentsReducer,
+    supportReducer,
+    understandingReducer,
+    feelingReducer
 }),
 applyMiddleware(logger),
 );
