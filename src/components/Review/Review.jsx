@@ -7,14 +7,23 @@ import {useSelector} from 'react-redux';
 function Review(){
 
     const history = useHistory();
-    const feeling = useSelector(state => state.feelingReducer);
-    const support = useSelector(state => state.supportReducer);
-    const understanding = useSelector(state => state.understandingReducer);
-    const comments = useSelector(state => state.commentsReducer);
+    const feeling = useSelector(store => store.feelingReducer);
+    const support = useSelector(store => store.supportReducer);
+    const understanding = useSelector(store => store.understandingReducer);
+    const comments = useSelector(store => store.commentsReducer);
     
 
     const onSubmitFeedback = () => {
-        axios.post('/feedback', feeling, support, understanding, comments)
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: {
+                feeling: feeling, 
+                understanding: understanding, 
+                support: support, 
+                comments: comments
+            }
+        })
         .then(() => {
             console.log(`In POST `)
         })
@@ -29,10 +38,10 @@ function Review(){
         <>
         <h3>Review your submission</h3>
         <ul>
-            <li>Feeling: {feedback.feeling}</li>
-            <li>Understanding: {feedback.understanding}</li>
-            <li>Support: {feedback.support}</li>
-            <li>Comments: {feedback.comments}</li>
+            <li>Feeling: {feeling}</li>
+            <li>Understanding: {understanding}</li>
+            <li>Support: {support}</li>
+            <li>Comments: {comments}</li>
         </ul>
         <button onClick={onSubmitFeedback}>SUBMIT</button>
         </>
