@@ -8,7 +8,7 @@ import App from './components/App/App';
 
 
 
-
+// reducer for the GET request to grab information stored in the database
 const feedbackReducer = (state = [], action) => {
     switch (action.type){
         case 'GET_FEEDBACK':
@@ -17,6 +17,7 @@ const feedbackReducer = (state = [], action) => {
             return state;
 };
 
+// reducer for feeling question
 const feelingReducer = (state = 0, action) => {
 	switch (action.type) {
 		case 'ADD_FEELING':
@@ -25,7 +26,7 @@ const feelingReducer = (state = 0, action) => {
 			return state;
 	}
 };
-
+// reducer for understanding question
 const understandingReducer = (state = 0, action) => {
 	switch (action.type) {
 		case 'ADD_UNDERSTANDING':
@@ -34,7 +35,7 @@ const understandingReducer = (state = 0, action) => {
 			return state;
 	}
 };
-
+// reducer for support question
 const supportReducer = (state = 0, action) => {
 	switch (action.type) {
 		case 'ADD_SUPPORT':
@@ -43,7 +44,7 @@ const supportReducer = (state = 0, action) => {
 			return state;
 	}
 };
-
+//reducer for additional comments
 const commentsReducer = (state = '', action) => {
 	switch (action.type) {
 		case 'ADD_COMMENTS':
@@ -53,7 +54,7 @@ const commentsReducer = (state = '', action) => {
 	}
 };
 
-// Creating the store
+// creating store to keep info from all reducers
 const storeInstance = createStore(
 combineReducers({
     feedbackReducer,
@@ -65,6 +66,7 @@ combineReducers({
 applyMiddleware(logger),
 );
 
+// Provider
 ReactDOM.render
 (<Provider store = { storeInstance }>
     <App />

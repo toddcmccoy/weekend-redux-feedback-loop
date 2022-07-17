@@ -8,6 +8,10 @@ function Support(){
     const history = useHistory();
     const [support, setSupport] = useState(1);
 
+    const handleGoBack = () => {
+        history.push('/understanding')
+    };
+
 // sending the selected rating to the store and ensuring that the submission is in the range of 1 to 5
     const handleSubmit = () => {
         if (support >= 1) {
@@ -38,6 +42,7 @@ function Support(){
                 onChange={(event) => setSupport(event.target.value)}
                 />
             </form><br />
+            <button onClick={handleGoBack}>Previous</button>
             <button onClick={handleSubmit}>Next</button>
         </div>
     </div>
