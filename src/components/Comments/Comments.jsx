@@ -8,6 +8,10 @@ function Comments(){
     const history = useHistory();
     const [comments, setComments] = useState('');
 
+    const handleGoBack = () => {
+        history.push('/support')
+    };
+
     const handleSubmit = () => {
         dispatch ({
             type: 'ADD_COMMENTS',
@@ -27,6 +31,7 @@ function Comments(){
                 onChange={(event) => setComments(event.target.value)}
                 />
             </form><br />
+            <button onClick={handleGoBack}>Previous</button>
             <button onClick={handleSubmit}>NEXT</button>
         </div>
     </div>

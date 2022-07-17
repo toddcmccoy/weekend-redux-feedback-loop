@@ -10,6 +10,10 @@ function Review(){
     const understanding = useSelector(store => store.understandingReducer);
     const comments = useSelector(store => store.commentsReducer);
     
+    const handleGoBack = () => {
+        history.push('/comments')
+    };
+
 // POSTing the feedback data to the database
     const onSubmitFeedback = () => {
         axios({
@@ -45,6 +49,7 @@ function Review(){
             <li>Support: {support}</li>
             <li>Comments: {comments}</li>
         </ul><br />
+        <button onClick={handleGoBack}>Previous</button>
         <button type="submit" onClick={onSubmitFeedback}>Submit</button>
         </div>
         </div>
