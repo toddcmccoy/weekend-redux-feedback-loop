@@ -9,11 +9,15 @@ function Understanding(){
     const [understanding, setUnderstanding] = useState(1);
 
     const handleSubmit = () => {
+        if (understanding >= 1){
         dispatch ({
             type: 'ADD_UNDERSTANDING',
             payload: Number(understanding)
         })
         history.push('/support')
+        } else{
+            alert ('You must enter a number between 1 and 5. Thank you for your cooperation.')
+        };
     }
     return(
         <div className = "container">
@@ -31,7 +35,7 @@ function Understanding(){
                 value = {understanding}
                 onChange={(event) => setUnderstanding(event.target.value)}
                 />
-            </form>
+            </form><br />
             <button onClick={handleSubmit}>NEXT</button>
         </div>
     </div>

@@ -28,7 +28,7 @@ function Review(){
         .catch((err) => {
             console.log(`ERR in POST`, err)
         })
-        alert('THANK YOU FOR TAKING PART')
+        alert('Thank you for your cooperation.')
         history.push('/')
     }
 
@@ -44,7 +44,7 @@ function Review(){
             <li>Understanding: {understanding}</li>
             <li>Support: {support}</li>
             <li>Comments: {comments}</li>
-        </ul>
+        </ul><br />
         <button type="submit" onClick={onSubmitFeedback}>SUBMIT</button>
         </div>
         </div>

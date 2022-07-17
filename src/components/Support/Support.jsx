@@ -9,11 +9,16 @@ function Support(){
     const [support, setSupport] = useState(1);
 
     const handleSubmit = () => {
-        dispatch ({
+        if (support >= 1) {
+            dispatch ({
             type: 'ADD_SUPPORT',
             payload: Number(support)
         })
         history.push('/comments')
+        } else {
+            alert ('You must enter a number between 1 and 5. Thank you for your cooperation.')
+        };
+        
     }
     return(
         <div className = "container">
@@ -31,7 +36,7 @@ function Support(){
                 value = {support}
                 onChange={(event) => setSupport(event.target.value)}
                 />
-            </form>
+            </form><br />
             <button onClick={handleSubmit}>NEXT</button>
         </div>
     </div>

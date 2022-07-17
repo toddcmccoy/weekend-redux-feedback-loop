@@ -26,7 +26,7 @@ function Comments(){
                 value = {comments}
                 onChange={(event) => setComments(event.target.value)}
                 />
-            </form>
+            </form><br />
             <button onClick={handleSubmit}>NEXT</button>
         </div>
     </div>

@@ -9,11 +9,15 @@ function Feeling(){
     const [feeling, setFeeling] = useState(0);
 
     const handleSubmit = () => {
+        if (feeling >=1){
         dispatch ({
             type: 'ADD_FEELING',
             payload: Number(feeling)
         })
         history.push('/understanding')
+        } else{
+            alert ('You must enter a number between 1 and 5. Thank you for your cooperation.')
+        };
     }
     return(
     <div className = "container">
@@ -31,7 +35,7 @@ function Feeling(){
                 value = {feeling}
                 onChange={(event) => setFeeling(event.target.value)}
                 />
-            </form>
+            </form><br />
             <button onClick={handleSubmit}>NEXT</button>
         </div>
     </div>
