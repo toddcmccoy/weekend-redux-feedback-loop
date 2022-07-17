@@ -50,3 +50,13 @@
 h4 {
   font-style: italic;
 }
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+button.submit{
+  
+
+}

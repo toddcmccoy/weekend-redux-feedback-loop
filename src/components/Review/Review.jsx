@@ -1,7 +1,5 @@
-import { useState} from 'react';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
 
 function Review(){
@@ -35,15 +33,21 @@ function Review(){
     }
 
     return(
-        <>
-        <h3>Review your submission</h3>
+    <>
+        <div className = "container">
+        
+        <div className = "question-card">
+        
         <ul>
+            <li><h3>Review your submission</h3></li>
             <li>Feeling: {feeling}</li>
             <li>Understanding: {understanding}</li>
             <li>Support: {support}</li>
             <li>Comments: {comments}</li>
         </ul>
-        <button onClick={onSubmitFeedback}>SUBMIT</button>
+        <button type="submit" onClick={onSubmitFeedback}>SUBMIT</button>
+        </div>
+        </div>
         </>
     )
 }
